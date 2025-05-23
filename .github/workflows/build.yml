@@ -129,6 +129,12 @@ jobs:
               -storepass $GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD -keypass $GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD -dname "CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, S=Unknown, C=Unknown"
           fi
           env
+      
+      # Deliberately import the Godot assets
+      - name: Import Godot Assets
+        run: |
+          mkdir -p .godot
+          godot --headless --export-release "Linux/X11" /dev/null --quit 
 
       # Build the project for each platform
       - name: Build Godot Solutions
