@@ -134,7 +134,7 @@ jobs:
       - name: Import Godot Assets
         run: |
           mkdir -p .godot
-          godot --headless --export-release "Linux/X11" /dev/null --quit 
+          godot --headless --export-release "Linux" /dev/null --quit 
 
       # Build the project for each platform
       - name: Build Godot Solutions
